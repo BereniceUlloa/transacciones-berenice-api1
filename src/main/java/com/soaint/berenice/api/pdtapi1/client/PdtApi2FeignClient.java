@@ -14,7 +14,8 @@ import com.soaint.berenice.api.pdtapi1.dto.TransaccionProcesadaDto;
 import com.soaint.berenice.api.pdtapi1.dto.TransaccionRequestDto;
 import com.soaint.berenice.api.pdtapi1.dto.TransaccionResponseDto;
 
-@FeignClient(name = "api2-service", url = "${api2.url:http://localhost:8082}")
+@FeignClient(name = "api2-service", url = "${api2.url:http://localhost:8082}",
+configuration = FeignClientInterceptor.class)
 public interface PdtApi2FeignClient {
 
     // 1. Guardar Transacción
